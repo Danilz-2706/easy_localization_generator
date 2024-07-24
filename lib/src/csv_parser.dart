@@ -90,7 +90,7 @@ class CSVParser {
         }
 
         if(hasArgs && !item.isPlural && args.isEmpty)
-          strBuilder.write('args');
+          strBuilder.write('List<String>? args');
         strBuilder.write(') => ');
         strBuilder.write('\'${item.key}\'');
 
