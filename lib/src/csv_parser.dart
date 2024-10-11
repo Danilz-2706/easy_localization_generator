@@ -180,9 +180,21 @@ class CSVParser {
     return pluralKeywords.contains(keyParts.last);
   }
 
-  String _capitalize(String str) => '${str[0].toUpperCase()}${str.substring(1)}';
+  String _capitalize(String str) {
+      if (str.isEmpty) {
+    return '';
+  }
+  
+  return '${str[0].toUpperCase()}${str.substring(1)}';
+    
+  }
 
-  String _normalize(String str) => '${str[0].toLowerCase()}${str.substring(1)}';
+  String _normalize(String str) {
+    if(str.isEmpty){
+      return '';
+    }
+    '${str[0].toLowerCase()}${str.substring(1)}'
+  }
 
   String _joinKey(List<String> keys) => _normalize(keys.map((e) => _capitalize(e)).toList().join());
 }
