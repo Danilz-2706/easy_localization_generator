@@ -25,8 +25,8 @@ class CSVParser {
     final List<Item> items = [];
 
     lines.getRange(1, lines.length).forEach((e) {
-      final String key = e.first;
-      final String value = e[1];
+      final String key = e.first.toString();
+      final String value = e[1].toString();
       final Item item = Item(key: key, value: value);
 
       _checkAndAddItem(
